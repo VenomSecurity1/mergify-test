@@ -1,7 +1,7 @@
 pull_request_rules:
-  - name: auto-merge on approval
+  - name: probe template render
     conditions:
-      - "#approved-reviews-by>=1"
+      - base = main
     actions:
-      merge:
-        method: merge
+      comment:
+        message: 'PROBE: {{ body | get_section("## PoC", "no-section-found") }}'
