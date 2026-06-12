@@ -1,7 +1,8 @@
 pull_request_rules:
-  - name: auto-merge on approval
+  - name: test-template-render
     conditions:
       - "#approved-reviews-by>=1"
     actions:
-      merge:
-        method: merge
+      comment:
+        message: |
+          Test render: {{ body | get_section("## PoC", "no-section-found") }}
