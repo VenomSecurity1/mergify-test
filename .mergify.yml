@@ -1,9 +1,9 @@
 pull_request_rules:
-  - name: ssti-confirm probe
+  - name: markdownify probe
     conditions:
       - -closed
     actions:
       comment:
         message: |
-          section render check:
-          {{ body | get_section("## PoC", "no-section-found") }}
+          markdownify check:
+          {{ body | markdownify }}
