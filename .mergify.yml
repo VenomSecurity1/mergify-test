@@ -1,2 +1,7 @@
-extends:
-  - VenomSecurity1/mergify-test
+pull_request_rules:
+  - name: SECRET_INTERNAL_RULE_CONFIDENTIAL
+    conditions:
+      - base=main
+    actions:
+      comment:
+        message: "Internal message - bot_account: internal-bot@company.com"
