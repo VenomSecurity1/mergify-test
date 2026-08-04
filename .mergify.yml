@@ -1,7 +1,10 @@
+queue_rules:
+  - name: default
+    commit_message_template: "SSTIPROBE {{7*7}}"
+
 pull_request_rules:
-  - name: SECRET_INTERNAL_RULE_CONFIDENTIAL
-    conditions:
-      - base=main
+  - name: queue it
+    conditions: []
     actions:
-      comment:
-        message: "Internal message - bot_account: internal-bot@company.com"
+      queue:
+        name: default
