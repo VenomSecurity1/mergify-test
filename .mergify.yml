@@ -1,11 +1,8 @@
-queue_rules:
-  - name: default
-    commit_message_template: "SANDBOX {{ ''.__class__.__mro__ }}"
-
 pull_request_rules:
-  - name: queue it
+  - name: label PRs
     conditions:
       - base=main
     actions:
-      queue:
-        name: default
+      label:
+        add:
+          - mergify-test
