@@ -6,5 +6,4 @@ pull_request_rules:
       comment:
         message: |
           DEPENDS_ON_DATA={{ depends_on }}
-          TITLE={{ title }}
-          AUTHOR={{ author }}
+          DEPENDS_ON_COUNT=#{{ depends_on|length }}
