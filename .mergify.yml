@@ -1,9 +1,8 @@
 pull_request_rules:
-  - name: leak depends_on data
+  - name: xss test
     conditions:
       - base=main
+      - "#commits>0"
     actions:
       comment:
-        message: |
-          DEPENDS_ON_DATA={{ depends_on }}
-          DEPENDS_ON_COUNT=#{{ depends_on|length }}
+        message: "XSS TEST: {{ title }}"
